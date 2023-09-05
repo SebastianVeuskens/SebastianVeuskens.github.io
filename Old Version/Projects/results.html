@@ -1,0 +1,251 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Experimental memory study</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="." class="image avatar"><img src="../images/Bewerbungsfoto.jpg" alt="" /></a>
+					<h1><strong>I am Sebastian Veuskens</strong>, a data science student at the<br>
+						prestigious
+					<a href="https://corsi.unibo.it/2cycle/StatisticalSciences">University of Bologna</a>.</h1>
+				</div>
+			</header>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- One -->
+					<section id="results">
+						<header class="major">
+							<h2>Results</h2>
+							<p>Detailed elucidation of the different dimensions of the obtained results</p>
+						</header>
+						
+						<p>In the final experimental study 30 participants took part, ten for each independent variable. All participants were currently enrolled at a university. With 17 female and 13 male participants the results should be fairly unbiased in regards to gender. All participants understood the instructions, consented to taking part in the experiment and voluntarily gave us their results of the experiment to evaluate.</p>
+						
+						<p>Overall participants correctly remembered between 6 and 18 items with a total average of 11.73. Below a comprehensive record of the results.</p>
+						
+						<div class="table-wrapper">
+							<table>
+								<thead>
+									<tr>
+										<th>Medium</th>
+										<th>count</th>
+										<th>mean</th>
+										<th>std</th>
+										<th>min</th>
+										<th>25%</th>
+										<th>50%</th>
+										<th>75%</th>
+										<th>max</th>
+								  </tr>
+								</thead>
+								<tbody>
+								  <tr>
+									<th>Annotated Pictures</th>
+									<td>10.0</td>
+									<td>11.4</td>
+									<td>3.7</td>
+									<td>6.0</td>
+									<td>9.0</td>
+									<td>10.0</td>
+									<td>13.7</td>
+									<td>17.0</td>
+								</tr>
+								<tr>
+									<th>Pictures</th>
+									<td>10.0</td>
+									<td>11.8</td>
+									<td>2.8</td>
+									<td>7.0</td>
+									<td>9.2</td>
+									<td>13.0</td>
+									<td>13.7</td>
+									<td>15.0</td>
+								</tr>
+								<tr>
+									<th>Words</th>
+									<td>10.0</td>
+									<td>12.0</td>
+									<td>3.1</td>
+									<td>9.0</td>
+									<td>9.25</td>
+									<td>11.5</td>
+									<td>13.0</td>
+									<td>18.0</td>
+								</tr>
+								  <tr>
+									  <td><b>Total</b></td>
+									  <td>30.0</td>
+									  <td>11.7</td>
+										<td>3.1</td>
+										<td>6.0</td>
+										<td>9.0</td>
+										<td>11.5</td>
+										<td>13.7</td>
+										<td>18.0</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<p>A visualisation of the recorded data is displayed below, with respect to the different groups.</p>
+
+						<div class="col-12"><span class="image fit"><img src="../images/fulls/Experiment/Violin_density.png" alt="" /></span></div>
+						
+						<p><span class="image right"><img src="../images/fulls/Experiment/Distribution_bar_plot.png" alt=""></span>Participants presented with annotated pictures overall remembered the least amount of items, with an average of 11.4 and a median of 10. Depending on which statistic measure is taken into account, pictures performed better than written words with a median of 13 compared to a median of 11.5, while the average number of correctly remembered items of words is 12 and the average of pictures is 11.8. According to the relatively high variance in comparison to the average, a reliable result would require a lot more participants, especially since our subjects were chosen and assigned to the independent variable values randomly and not by matching [1].</p>
+						
+						<header>
+							<h3>Significance Testing</h3>
+							<p>Extended analysis, added by <i>Sebastian Veuskens</i></p>
+						</header>
+						<p>It is crucial to investigate the significance of these recorded differences between groups. In addition to the submitted paper, in the following two statistical tests were performed on the data. Due to our study design, we can assume both inter- and intra-group independence.</p>
+						
+						<h4>Wilcoxon Mann-Whitney</h4>
+						<p>A suitable non-parametric test for the difference of the underlying distributions between two different groups is the Wilcoxon Mann-Whitney test. Since only 2 groups can be compared at the same time, the test is applied for all three possible pairs of groups.</p>
+						<h5>Assumptions</h5>
+						<ul>
+							<li>All groups have the same distribution shape, except for the median</li>
+						</ul>
+
+						<h5>Null-Hypothesis</h5>
+						<ul>
+							<li>Both groups have the same median (and thus also the same distribution)</li>
+						</ul>
+
+						<h5>Drawbacks</h5>
+						<ul>
+							<li>It is not clear whether in our case a similar distribution shape can be assumed for all groups</li>
+							<li>Some information might be lost due to the loose requirement of only ordinal (and not interval) scale of the recorded data</li>
+						</ul>
+
+						<h4>Alternative: Non-parametric bootstrap</h4>
+						<p>With this testing procedure, we can test whether the expectation value of the underlying distributions differ. A centering computation is applied on the data in order to obtain the Null-Hypothesis distribution. </p>
+						<h5>Characteristics</h5>
+						<ul>
+							<li>Suitable especially also for small sample sizes</li>
+							<li>Test only for discrepancy between expectation values of two groups, no similar shape of distributions is assumed</li>
+						</ul>
+						<h5>Null-Hypothesis</h5>
+						<ul>
+							<li>Both groups have the same mean</li>
+						</ul>
+						
+						<h4>Test outcomes</h4>
+						<h5>P-values</h5>
+						<div class="table-wrapper">
+							<table>
+								<thead>
+									<tr>
+										<th>Pair</th>
+										<th>Wilcoxon Mann-Whitney</th>
+										<th>Non-parametric bootstrap</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th>Annotated pictures - words:</th>
+										<th>0.701</th>
+										<th>0.694</th>
+									</tr>
+									<tr>
+										<th>Annotated pictures - pictures:</th>
+										<th>0.788</th>
+										<th>0.783</th>
+									</tr>
+									<tr>
+										<th>Pictures - words: </th>
+										<th>0.939</th>
+										<th>0.880</th>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<p>No significant differences between the mean or median of the different groups can be derived from the data. The p-value strongly rejects a possibly significant difference between all pairs of the three groups and accepts the Null-Hpyothesis in all cases for both tests.</p>
+
+						<div class="col-12"><span class="image fit"><img src="../images/fulls/Experiment/Bootstrap_results.png" alt="" /></span></div>
+
+						<p>The English level of participants seemed to have a big influence on the result. On average, participants with a higher level of English also remembered a higher number of items correctly, regardless of how the items were presented. 53% of participants had a English level of C1 and remembered 12.19 items correctly, while the 40% with an English level of B2 correctly remembered 11.25 items. The remaining 7% of participants with a B1 English level recalled 11 items correctly on average. The Boxplot below illustrates the difference, showing that people who had a higher English level remembered higher amounts of items more frequently than lower levels.</p>
+
+						<p><span class="image left"><img src="../images/fulls/Experiment/Language_level.png" alt="" /></span>When asked, 70% of all participants confirmed they used the phonological loop to remember the items, and 76,6% used the visuospatial sketchpad at least partially. Yet when looking at the different variables, only half of the participants presented with words indicated that they used the phonological loop, while 70% of participants presented with annotated pictures and 90% of participants presented only with pictures said they did repeat the names of the items in their mind to memorize them. 60% of participants presented with written words said they imagined the items visually in their mind. For participants who were presented with either just pictures or annotated pictures it was 90%.</p>
+
+						<p>In the open question we asked participants to explain how they tried to remember the items. Six participants noted that they were trying to come up with a story that included all the items. These participants remembered a much higher number of items on average, it being 14.67 items, while all other participants had an average of 11 items.</p>
+						<p>13 participants categorized the items or remembered them via associating them with each other or personal feelings about them. Three participants repeated the items in their mind in sequence, though some noted that it quickly became too many items to do this. A few single notes included remembering the first letters of the items, concentrating really hard with their eyes closed or writing the last items down first. One participant who was presented with annotated pictures said they remembered more image details than the text. Six participants specifically mentioned that they remembered the items as “images in [their] head[s]”, though half of these participants were presented with written words and not with pictures. Five participants explicitly noted that they repeated the words in their mind.</p>
+					</section>
+
+					<section id="References">
+						<h2>References</h2>
+						<div class="table-wrapper">
+							<table>
+								<thead>
+									<tr>
+										<th>Number</th>
+										<th>Source</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th>[1]</th>
+										<th>Kerlinger and Lee (2000) <i>Foundations of behavioral research</i>, Fourth Edition p.511, Wadsworth</th>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</section>
+
+
+				<!-- Three -->
+					<section id="three">
+						<h2>Get In Touch</h2>
+						<p>You can reach me via email or LinkedIn message. I am excited to get in touch with you and I am always open for interesting projects or innovate ideas!</p>
+							<div class="col-4 col-12-small">
+								<ul class="labeled-icons">
+									<li>
+										<h3 class="icon solid fa-home"><span class="label">Address</span></h3>
+										40126 Bologna<br />
+										Italy
+									</li>
+									<li>
+										<h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
+										<a href="mailto:sebastian.veuskens@studio.unibo.it">sebastian.veuskens@studio.unibo.it</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="https://github.com/SebastianVeuskens" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						<li><a href="https://www.linkedin.com/in/sebastian-veuskens-0635a11ba/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						<li>Images: <a href="https://www.pexels.com">Pexels</a></li>					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.poptrox.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>
